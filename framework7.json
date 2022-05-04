@@ -1,0 +1,19 @@
+{
+  "cwd": "C:\\Users\\valen\\Desktop\\programming\\Coding\\web-engineering",
+  "type": [
+    "web"
+  ],
+  "name": "location-based-service",
+  "framework": "react",
+  "template": "tabs",
+  "cssPreProcessor": false,
+  "bundler": "vite",
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false
+}
