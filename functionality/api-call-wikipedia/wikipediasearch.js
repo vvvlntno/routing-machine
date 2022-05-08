@@ -26,7 +26,7 @@ async function handleSubmit(event) {
   
   function displayResults(results) {
     const searchResults = document.querySelector('.search-results');
-  
+    searchResults.innerHTML = "";
     results.query.search.forEach(result => {
       const url = `https://de.wikipedia.org/?curid=${result.pageid}`;
   
