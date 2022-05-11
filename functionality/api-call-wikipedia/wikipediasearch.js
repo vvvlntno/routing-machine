@@ -36,7 +36,7 @@ async function handleSubmit(event) {
           <h3 class="result-title">
             <a href="${url}" target="_blank" rel="noopener">${result.title}</a>
           </h3>
-          <a href="${url}" class="result-link" target="_blank" rel="noopener">${url}</a>
+          <a href="${url}" class="result-link" target="_blank" rel="noopener">${url}</a><br>
           <span class="result-snippet">${result.snippet}</span><br>
         </div>`
       );
