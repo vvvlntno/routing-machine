@@ -12,6 +12,7 @@ async function handleSubmit(event) {
     }
 }
   
+async function searchWikipedia(searchQuery) {
     const endpoint = `https://de.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${searchQuery}`;
     const response = await fetch(endpoint);
 
