@@ -59,8 +59,8 @@ const MyApp = () => {
   return (
     <App { ...f7params } >
 
-        {/* Left panel with cover effect*/}
-        <Panel left cover dark>
+        {/* Left panel with reveal effect*/}
+        <Panel left reveal dark>
           <View>
             <Page>
               <Navbar title="Left Panel"/>
@@ -70,12 +70,12 @@ const MyApp = () => {
         </Panel>
 
 
-        {/* Right panel with reveal effect*/}
-        <Panel right reveal dark>
+        {/* Right panel with cover effect*/}
+        <Panel right cover dark>
           <View>
             <Page>
-              <Navbar title="Right Panel"/>
-              <Block>Right panel content goes here</Block>
+              <Navbar title="Favoriten"/>
+              <Block>Du hast noch keine Favoriten</Block>
             </Page>
           </View>
         </Panel>

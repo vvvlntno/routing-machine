@@ -1,1 +1,9 @@
 /* Your app custom styles here */
+* {
+    --color-one: #6a9665;
+    --text-color: #202e21;
+    --bg-color: #566c53;
+    --color-four: #bbd9b5;
+    --color-five: #8dad88;
+    --color-six: #8da38e;
+}

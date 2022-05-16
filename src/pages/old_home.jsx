@@ -30,11 +30,7 @@ const HomePage = () => (
       </NavRight>
       <NavTitleLarge>location-based-service</NavTitleLarge>
     </Navbar>
-    {/* Open-Street-Map */}
-    <Block>
-      <p>Test</p>
-      {/*<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-22.763671875000004%2C40.61298000354222%2C33.75000000000001%2C58.99465132322371&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>*/}
-    </Block>
+
     {/* Page content */}
     <Block strong>
       <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
