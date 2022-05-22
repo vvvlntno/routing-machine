@@ -45,7 +45,6 @@ function displaydynamicmap(lon, lat) {
 async function handleSubmit(event) {
   event.preventDefault();
   const inputValue = document.querySelector('.search-input').value;
-  console.log(inputValue)
   const searchQuery = inputValue.trim();
   fetch(`https://nominatim.openstreetmap.org/?format=json&city=`+searchQuery).
   then(function(response) {

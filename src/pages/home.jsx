@@ -32,10 +32,10 @@ const HomePage = () => (
     </Navbar>
     {/* Open-Street-Map */}
     <Block>
-      <p>Test</p>
-      {/*<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-22.763671875000004%2C40.61298000354222%2C33.75000000000001%2C58.99465132322371&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>*/}
+      
+      <iframe width="500" height="300" src="https://api.maptiler.com/maps/openstreetmap/?key=Ah5Nrpqbp5QDMPM7F2wg#10.7/47.65689/9.47554"></iframe>
     </Block>
-    {/* Page content */}
+    {/* Page content 
     <Block strong>
       <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
 
@@ -84,7 +84,7 @@ const HomePage = () => (
         title="Request Data & Load"
         link="/request-and-load/user/123456/"
       />
-    </List>
+    </List>*/}
   </Page>
 );
 export default HomePage;
