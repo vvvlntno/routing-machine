@@ -1,4 +1,5 @@
 import React from 'react';
+import MyMap from '../components/map';
 import {
   Page,
   Navbar,
@@ -30,11 +31,12 @@ const HomePage = () => (
       </NavRight>
       <NavTitleLarge>location-based-service</NavTitleLarge>
     </Navbar>
+    <MyMap/>
     {/* Open-Street-Map */}
-    <Block>
+    {/* <Block>
       
       <iframe width="500" height="300" src="https://api.maptiler.com/maps/openstreetmap/?key=Ah5Nrpqbp5QDMPM7F2wg#10.7/47.65689/9.47554"></iframe>
-    </Block>
+    </Block> */}
     {/* Page content 
     <Block strong>
       <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
