@@ -38,6 +38,7 @@ If the Server does not work after this, try these commands
 npm install --save leaflet
 npm install --save leaflet-routing-machine
 npm install --save leaflet-groupedlayercontrol
+npm install --save leaflet-control-geocoder
 ```
 
 ## NPM Scripts

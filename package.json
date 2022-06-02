@@ -24,6 +24,7 @@
     "framework7-icons": "^5.0.5",
     "framework7-react": "^7.0.2",
     "leaflet": "^1.8.0",
+    "leaflet-control-geocoder": "^2.4.0",
     "leaflet-groupedlayercontrol": "^0.6.1",
     "leaflet-routing-machine": "^3.2.12",
     "material-icons": "^1.10.9",
