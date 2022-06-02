@@ -33,6 +33,13 @@ First of all we need to install dependencies, run in terminal
 npm install
 ```
 
+If the Server does not work after this, try these commands
+```
+npm install --save leaflet
+npm install --save leaflet-routing-machine
+npm install --save leaflet-groupedlayercontrol
+```
+
 ## NPM Scripts
 
 * 🔥 `start` - run development server
