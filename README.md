@@ -39,6 +39,7 @@ npm install --save leaflet
 npm install --save leaflet-routing-machine
 npm install --save leaflet-groupedlayercontrol
 npm install --save leaflet-control-geocoder
+npm install --save nominatim-geocoder
 ```
 
 ## NPM Scripts

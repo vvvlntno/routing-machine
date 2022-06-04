@@ -28,6 +28,7 @@
     "leaflet-groupedlayercontrol": "^0.6.1",
     "leaflet-routing-machine": "^3.2.12",
     "material-icons": "^1.10.9",
+    "nominatim-geocoder": "^0.1.4",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
