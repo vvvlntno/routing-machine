@@ -27,7 +27,8 @@ async function searchWikipedia(searchQuery) {
 function displayResults(results) {
     const searchResults = document.querySelector('.search-results');
     searchResults.innerHTML = "";
-    results.query.search.forEach(result => {
+    result = results.query.search[0]
+    // results.query.search.forEach(result => {
       const url = `https://de.wikipedia.org/?curid=${result.pageid}`;
   
       searchResults.insertAdjacentHTML(
@@ -40,7 +41,7 @@ function displayResults(results) {
           <span class="result-snippet">${result.snippet}</span><br>
         </div>`
       );
-    });
+    // });
 }
   
   

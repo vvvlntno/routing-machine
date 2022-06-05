@@ -31,9 +31,40 @@ function geoError(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
     alert("ACHTUNG: Ohne Deine Geolocation-Daten ist die Funktionalität von viaLinked nur eingeschränkt möglich! Um die Geolocation-Funktionalität von viaLinked besser einschätzen zu können, klicke auf das 'viaLinked-Logo' oben links und lese bitte unser Datenschutz- und Nutzungsrichtlinien nach.");
 }
+
 navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
 
+async function reverseGeocoding(lon, lat) {
+    //takes lon and lat and returns city name.
+    try {
+        let response = await fetch('https://nominatim.openstreetmap.org/reverse?format=json&lon=' + lon + '&lat=' + lat)
+        let json = await response.json()
+        let add = await json.display_name.split(', ');
+        return add[4]
+    } catch {
+        return undefined
+    }
+}
 
+async function searchWikipedia(searchQuery) {
+    const endpoint = `https://de.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${searchQuery}`;
+    const response = await fetch(endpoint);
+
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+
+    const json = await response.json();
+    return json;
+}
+
+function displayResults(results) {
+    let result = results.query.search[0]
+
+    console.log(result.title)
+    console.log(result.snippet)
+  
+}
 
 
 //map element
@@ -83,8 +114,13 @@ export default function MyMap() {
                 map.closePopup();
             });     
 
-            L.DomEvent.on(destBtn, 'click', function() {
+            L.DomEvent.on(destBtn, 'click', async function() {
                 control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
+                let cityname = await reverseGeocoding(e.latlng.lng,e.latlng.lat)
+                if (cityname != undefined) {
+                    displayResults(await searchWikipedia(cityname))
+                }
+                //api call mit e.latlng
                 map.closePopup();
             });
 

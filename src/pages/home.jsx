@@ -29,7 +29,7 @@ const HomePage = () => (
       <NavRight>
         <Link iconIos="f7:menu" iconAurora="f7:menu" iconMd="material:menu" panelOpen="right" />
       </NavRight>
-      <NavTitleLarge>location-based-service</NavTitleLarge>
+      <NavTitleLarge>reverse geo coding maps</NavTitleLarge>
     </Navbar>
     <MyMap/>
     {/* Open-Street-Map */}

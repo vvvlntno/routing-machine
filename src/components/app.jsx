@@ -74,8 +74,8 @@ const MyApp = () => {
         <Panel right cover dark>
           <View>
             <Page>
-              <Navbar title="Favoriten"/>
-              <Block>Du hast noch keine Favoriten</Block>
+              <Navbar title="Informationen"/>
+              <Block>Gib etwas ein, damit Informationen angezeigt werden können.</Block>
             </Page>
           </View>
         </Panel>
