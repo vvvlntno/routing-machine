@@ -50,7 +50,7 @@ export default function MyMap() {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        L.Routing.control({
+        let control = L.Routing.control({
             waypoints: [
                 L.latLng(47.6500279, 9.4800858),
                 L.latLng(47.78198, 9.61062)
@@ -60,12 +60,43 @@ export default function MyMap() {
             //nominatin doesnt have autocomplete
         }).addTo(map);
 
-        //add lat and lon of user
+        //popup when click on map
+        function createButton(label, container) {
+            var btn = L.DomUtil.create('button', '', container);
+            btn.setAttribute('type', 'button');
+            btn.innerHTML = label;
+            return btn;
+        }
+
+        map.on('click', function(e) {
+            var container = L.DomUtil.create('div'),
+                startBtn = createButton('Start from this location', container),
+                destBtn = createButton('Go to this location', container);
+
+            L.popup()
+                .setContent(container)
+                .setLatLng(e.latlng)
+                .openOn(map);
+
+            L.DomEvent.on(startBtn, 'click', function() {
+                control.spliceWaypoints(0, 1, e.latlng);
+                map.closePopup();
+            });     
+
+            L.DomEvent.on(destBtn, 'click', function() {
+                control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
+                map.closePopup();
+            });
+
+        });
+
+        //add lat and lon of user location
         // L.marker(latlon).addTo(map)
         //     .bindPopup('Dein Standort.')
         //     .openPopup();
 
     })
+    
 
     return <div id="map" className="map"/>;
 }
