@@ -7,6 +7,7 @@ import 'leaflet/dist/leaflet.css';
 import '../css/map.css';
 import 'leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js';
 import 'https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js';
+import Information from './information';
 
 
 
@@ -18,6 +19,7 @@ var geoOptions = {
     timeout: 1000,                // Maximum Wartezeit
     maximumAge: 0                 // Maximum Cache-Alter
 }
+
 function geoSuccess(pos) {
     var crd = pos.coords;
     console.log("Längengrad: " + pos.coords.longitude);
@@ -63,17 +65,15 @@ function displayResults(results) {
 
     console.log(result.title)
     console.log(result.snippet)
-  
 }
 
 
-//map element
 /**
  *
  * @return {JSX.Element} - Map Component
  * @constructor
  */
-export default function MyMap() {
+export default function MyMap(props) {
     useEffect((e) => {
         var map = L.map('map').setView([47.6500279, 9.4800858], 13);
 
@@ -82,10 +82,11 @@ export default function MyMap() {
         }).addTo(map);
 
         let control = L.Routing.control({
-            waypoints: [
-                L.latLng(47.6500279, 9.4800858),
-                L.latLng(47.78198, 9.61062)
-            ],
+            /**  Example: From Friedrichshafen to Ravensburg
+            waypoints: [ 
+                 L.latLng(47.6500279, 9.4800858),
+                 L.latLng(47.78198, 9.61062)
+            ], */
             routeWhileDragging: true,
             geocoder: L.Control.Geocoder.nominatim()
             //nominatin doesnt have autocomplete
@@ -116,11 +117,14 @@ export default function MyMap() {
 
             L.DomEvent.on(destBtn, 'click', async function() {
                 control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
+
+                let lnglat = [e.latlng.lng,e.latlng.lat]
+                //hier informationen in information.jsx übertragen
+
                 let cityname = await reverseGeocoding(e.latlng.lng,e.latlng.lat)
                 if (cityname != undefined) {
                     displayResults(await searchWikipedia(cityname))
                 }
-                //api call mit e.latlng
                 map.closePopup();
             });
 

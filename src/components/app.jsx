@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Information from './information';
 
 import {
   f7,
@@ -58,24 +59,12 @@ const MyApp = () => {
 
   return (
     <App { ...f7params } >
-
-        {/* Left panel with reveal effect*/}
-        <Panel left reveal dark>
-          <View>
-            <Page>
-              <Navbar title="Left Panel"/>
-              <Block>Left panel content goes here</Block>
-            </Page>
-          </View>
-        </Panel>
-
-
         {/* Right panel with cover effect*/}
         <Panel right cover dark>
           <View>
             <Page>
               <Navbar title="Informationen"/>
-              <Block>Gib etwas ein, damit Informationen angezeigt werden können.</Block>
+              <Information name="Friedrichshafen" lat="47.6500279" lng="9.4800858"/>
             </Page>
           </View>
         </Panel>
@@ -86,15 +75,11 @@ const MyApp = () => {
           {/* Tabbar for switching views-tabs */}
           <Toolbar tabbar labels bottom>
             <Link tabLink="#view-home" tabLinkActive iconIos="f7:house_fill" iconAurora="f7:house_fill" iconMd="material:home" text="Home" />
-            <Link tabLink="#view-catalog" iconIos="f7:square_list_fill" iconAurora="f7:square_list_fill" iconMd="material:view_list" text="Catalog" />
             <Link tabLink="#view-settings" iconIos="f7:gear" iconAurora="f7:gear" iconMd="material:settings" text="Settings" />
           </Toolbar>
 
           {/* Your main view/tab, should have "view-main" class. It also has "tabActive" prop */}
           <View id="view-home" main tab tabActive url="/" />
-
-          {/* Catalog View */}
-          <View id="view-catalog" name="catalog" tab url="/catalog/" />
 
           {/* Settings View */}
           <View id="view-settings" name="settings" tab url="/settings/" />
