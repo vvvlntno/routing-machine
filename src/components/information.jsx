@@ -1,43 +1,50 @@
 import React, { useEffect, useState } from 'react';
-import { useRef } from 'react';
-
-
-async function searchWikipedia(searchQuery) {
-    const endpoint = `https://de.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${searchQuery}`;
-    const response = await fetch(endpoint);
-
-    if (!response.ok) {
-        throw Error(response.statusText);
-    }
-
-    const json = await response.json();
-    return json;
-}
-
-function displayResults(results) {
-    let result = results.query.search[0]
-
-    console.log(result.title)
-    console.log(result.snippet)
-
-    return [result.title,result.snippet]
-}
+import MyMap from './map';
 
 /**
  *
  * @return {JSX.Element} - Information Component
  * @constructor
  */
-export default function Information(props) {
-    let defaulttext = "Bitte geben sie einen Endpunkt an um Informationen zu laden."
-    // let cityname = props.name
-
-    // if (cityname != undefined) {
-    //     defaulttext = displayResults(await searchWikipedia(cityname))
-    // }
-
+export default function Information() {
+    const [state, setState] = useState(["Information","Select a Destination for Information :)"])
+    const title = state[0]
+    const snippet = state[1]
+    
+    useEffect(() => {
+        console.log(title)
+        console.log(snippet)
+    })
 
     return <div id="information" className="information">
-        <p>{props.name}</p>
-    </div>;
+        <MyMap setState={ setState }/>
+        </div>;
 }
+
+
+// old one
+// /**
+//  *
+//  * @return {JSX.Element} - Information Component
+//  * @constructor
+//  */
+//  export default function Information(props) {
+//     const [resultTitle, setResultTitle] = useState(props.result[0])
+//     const [resultSnippet, setResultSnippet] = useState(props.result[1])
+    
+//     useEffect(() => {
+//         let result = props.result
+//         console.log(result[0])
+//         console.log(result[1])
+//         //ab hier passt nichtmehr
+//         setResultTitle(result[0])
+//         setResultSnippet(result[1])
+//         console.log(resultTitle)
+//         console.log(resultSnippet)
+//     }, [props.result])
+
+//     return <div id="information" className="information"/>;
+// }
+
+
+

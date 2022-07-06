@@ -64,7 +64,6 @@ const MyApp = () => {
           <View>
             <Page>
               <Navbar title="Informationen"/>
-              <Information name="Friedrichshafen" lat="47.6500279" lng="9.4800858"/>
             </Page>
           </View>
         </Panel>

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useRef } from 'react';
+import React, { useEffect } from 'react';
 import L from 'leaflet';
 import Routing from 'leaflet-routing-machine'; // eslint-disable-line
 // makes clean rendering of the map possible without lagging
@@ -7,7 +6,6 @@ import 'leaflet/dist/leaflet.css';
 import '../css/map.css';
 import 'leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js';
 import 'https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js';
-import Information from './information';
 
 
 
@@ -22,9 +20,7 @@ var geoOptions = {
 
 function geoSuccess(pos) {
     var crd = pos.coords;
-    console.log("Längengrad: " + pos.coords.longitude);
     var lon = crd.longitude;  // Längengrad
-    console.log("Breitengrad: " + pos.coords.latitude);
     var lat = crd.latitude;   // Breitengrad
     latlon = [lat,lon]
 }
@@ -60,11 +56,10 @@ async function searchWikipedia(searchQuery) {
     return json;
 }
 
-function displayResults(results) {
+function trimResults(results) {
     let result = results.query.search[0]
 
-    console.log(result.title)
-    console.log(result.snippet)
+    return [result.title,result.snippet]
 }
 
 
@@ -73,8 +68,9 @@ function displayResults(results) {
  * @return {JSX.Element} - Map Component
  * @constructor
  */
-export default function MyMap(props) {
-    useEffect((e) => {
+export default function MyMap({ setState }) {
+    let resultsJSON;
+    useEffect(() => {
         var map = L.map('map').setView([47.6500279, 9.4800858], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -118,25 +114,19 @@ export default function MyMap(props) {
             L.DomEvent.on(destBtn, 'click', async function() {
                 control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
 
-                let lnglat = [e.latlng.lng,e.latlng.lat]
+                // let lnglat = [e.latlng.lng,e.latlng.lat]
                 //hier informationen in information.jsx übertragen
 
                 let cityname = await reverseGeocoding(e.latlng.lng,e.latlng.lat)
                 if (cityname != undefined) {
-                    displayResults(await searchWikipedia(cityname))
+                    //crasht hier lol
+                    resultsJSON = await searchWikipedia(cityname)
+                    resultsJSON = trimResults(resultsJSON)
+                    setState(resultsJSON)
                 }
                 map.closePopup();
             });
-
         });
-
-        //add lat and lon of user location
-        // L.marker(latlon).addTo(map)
-        //     .bindPopup('Dein Standort.')
-        //     .openPopup();
-
-    })
-    
-
-    return <div id="map" className="map"/>;
+    }, [])
+    return <div id="map" className="map"></div>;
 }

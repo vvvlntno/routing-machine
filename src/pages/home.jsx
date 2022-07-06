@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState }from 'react';
 import MyMap from '../components/map';
+import Information from '../components/information';
 import {
   Page,
   Navbar,
@@ -33,8 +34,8 @@ const HomePage = () => (
       </NavRight>
       <NavTitleLarge>Reverse Geo Coding Maps</NavTitleLarge>
     </Navbar>
-    <MyMap/>
-    {/* <MyMap parentCallback={ this.handleCallback }/> */}
+    {/* <MyMap/> */}
+    <Information/>
   </Page>
 );
 export default HomePage;
