@@ -7,3 +7,11 @@
     --color-five: #8dad88;
     --color-six: #8da38e;
 }
+
+#border {
+    border: 2px solid black;
+}
+
+#h2bottomborder {
+    border-bottom: 1px solid black;
+}

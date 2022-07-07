@@ -18,6 +18,10 @@ export default function Information() {
 
     return <div id="information" className="information">
         <MyMap setState={ setState }/>
+        <div id="border">
+            <h2 id="h2bottomborder">{ title }</h2>
+            <p>{ snippet }</p>
+        </div>
         </div>;
 }
 

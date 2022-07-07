@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Information from './information';
+import React, { useState} from 'react';
 
 import {
   f7,
@@ -67,25 +66,26 @@ const MyApp = () => {
             </Page>
           </View>
         </Panel>
-
+      	
+        <View id="view-home" main tab tabActive url="/" />
 
         {/* Views/Tabs container */}
-        <Views tabs className="safe-areas">
+        {/* <Views tabs className="safe-areas"> */}
           {/* Tabbar for switching views-tabs */}
-          <Toolbar tabbar labels bottom>
+          {/* <Toolbar tabbar labels bottom>
             <Link tabLink="#view-home" tabLinkActive iconIos="f7:house_fill" iconAurora="f7:house_fill" iconMd="material:home" text="Home" />
             <Link tabLink="#view-settings" iconIos="f7:gear" iconAurora="f7:gear" iconMd="material:settings" text="Settings" />
-          </Toolbar>
+          </Toolbar> */}
 
           {/* Your main view/tab, should have "view-main" class. It also has "tabActive" prop */}
-          <View id="view-home" main tab tabActive url="/" />
+          
 
           {/* Settings View */}
-          <View id="view-settings" name="settings" tab url="/settings/" />
+          {/* <View id="view-settings" name="settings" tab url="/settings/" /> */}
 
-        </Views>
+        {/* </Views> */}
 
-      {/* Popup */}
+      {/* Popup 
       <Popup id="my-popup">
         <View>
           <Page>
@@ -99,9 +99,9 @@ const MyApp = () => {
             </Block>
           </Page>
         </View>
-      </Popup>
+      </Popup>*/}
 
-      <LoginScreen id="my-login-screen">
+      {/* <LoginScreen id="my-login-screen">
         <View>
           <Page loginScreen>
             <LoginScreenTitle>Login</LoginScreenTitle>
@@ -129,7 +129,7 @@ const MyApp = () => {
             </List>
           </Page>
         </View>
-      </LoginScreen>
+      </LoginScreen> */}
     </App>
   )
 }
