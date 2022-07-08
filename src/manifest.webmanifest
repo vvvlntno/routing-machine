@@ -1,0 +1,28 @@
+{
+    "name": "Location Based Service Application",
+    "short_name": "LBSApp",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color" : "#fff" ,
+    "description": "Navigieren Sie einfach durch die Welt.",
+    "theme_color": "white",
+    "icons": [{
+      "src": "/public/icons/pin-on-map.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }, {
+      "src": "/public/icons/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }, {
+      "src": "/public/icons/144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    }],
+    "prefer_related_applications": [{
+      "platform": "Web"
+    }]
+  }

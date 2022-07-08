@@ -40,6 +40,7 @@ npm install --save leaflet-routing-machine
 npm install --save leaflet-groupedlayercontrol
 npm install --save leaflet-control-geocoder
 npm install --save nominatim-geocoder
+npm install --save-dev sw-precache-webpack-plugin?
 ```
 
 ## NPM Scripts

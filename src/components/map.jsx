@@ -14,7 +14,7 @@ let latlon = [0,0];
 
 var geoOptions = {
     enableHighAccuracy: true,     // Super-Präzisions-Modus
-    timeout: 1000,                // Maximum Wartezeit
+    timeout: 3000,                // Maximum Wartezeit
     maximumAge: 0                 // Maximum Cache-Alter
 }
 
@@ -29,9 +29,11 @@ function geoError(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
     alert("ACHTUNG: Ohne Deine Geolocation-Daten ist die Funktionalität von viaLinked nur eingeschränkt möglich! Um die Geolocation-Funktionalität von viaLinked besser einschätzen zu können, klicke auf das 'viaLinked-Logo' oben links und lese bitte unser Datenschutz- und Nutzungsrichtlinien nach.");
 }
-
-navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
-
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+} else {
+    alert('Geolocation ist nur eingeschränkt möglich, wenn Sie alle Funktionen der Seite benutzen wollen geben sie dieser Webseite Standortzugriff')
+}
 async function reverseGeocoding(lon, lat) {
     //takes lon and lat and returns city name.
     try {
@@ -62,6 +64,7 @@ function trimResults(results) {
     return [result.title,result.snippet]
 }
 
+// [47.6500279, 9.4800858]
 
 /**
  *
@@ -71,7 +74,13 @@ function trimResults(results) {
 export default function MyMap({ setState }) {
     let resultsJSON;
     useEffect(() => {
-        var map = L.map('map').setView([47.6500279, 9.4800858], 13);
+        var map = L.map('map').setView(latlon, 16);
+        setTimeout(() => {
+            map.flyTo(latlon, 13, {
+                animate: true,
+                durantion: 2
+            });
+        }, 1000)
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
