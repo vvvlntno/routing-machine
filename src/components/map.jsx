@@ -34,6 +34,7 @@ if (navigator.geolocation) {
 } else {
     alert('Geolocation ist nur eingeschränkt möglich, wenn Sie alle Funktionen der Seite benutzen wollen geben sie dieser Webseite Standortzugriff')
 }
+
 async function reverseGeocoding(lon, lat) {
     //takes lon and lat and returns city name.
     try {
@@ -101,6 +102,8 @@ export default function MyMap({ setState }) {
         function createButton(label, container) {
             var btn = L.DomUtil.create('button', '', container);
             btn.setAttribute('type', 'button');
+            btn.setAttribute('class', 'col button button-fill color-green');
+            btn.setAttribute('style', 'margin-bottom: 10px; background-color: #bbd9b5 !important; color: black; font-size: 12px !important;')
             btn.innerHTML = label;
             return btn;
         }
