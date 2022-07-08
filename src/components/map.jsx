@@ -123,7 +123,7 @@ export default function MyMap({ setState }) {
             L.DomEvent.on(destBtn, 'click', async function() {
                 control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
 
-                // let lnglat = [e.latlng.lng,e.latlng.lat]
+                /**  let lnglat = [e.latlng.lng,e.latlng.lat] */
 
                 let cityname = await reverseGeocoding(e.latlng.lng,e.latlng.lat)
                 if (cityname != undefined) {

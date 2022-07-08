@@ -8,10 +8,36 @@
     --color-six: #8da38e;
 }
 
-#border {
-    border: 2px solid black;
+#information-border {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
 }
 
-#h2bottomborder {
-    border-bottom: 1px solid black;
+#information {
+    background-color: var(--color-four);
+}
+
+#information-h2 {
+    margin-bottom: 0px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#information-paragraph {
+    margin-top: 0px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    /* text-align: justify;
+    text-align-last: justify;
+    -moz-text-align-last: justify;
+    hyphens: auto; */
+}
+
+.informationgreen {
+    background-color: var(--color-four);
 }
