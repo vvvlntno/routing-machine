@@ -78,7 +78,7 @@ export default function MyMap({ setState }) {
         setTimeout(() => {
             map.flyTo(latlon, 13, {
                 animate: true,
-                durantion: 2
+                durantion: 3
             });
         }, 1000)
 
