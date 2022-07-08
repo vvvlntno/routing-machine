@@ -115,11 +115,9 @@ export default function MyMap({ setState }) {
                 control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
 
                 // let lnglat = [e.latlng.lng,e.latlng.lat]
-                //hier informationen in information.jsx übertragen
 
                 let cityname = await reverseGeocoding(e.latlng.lng,e.latlng.lat)
                 if (cityname != undefined) {
-                    //crasht hier lol
                     resultsJSON = await searchWikipedia(cityname)
                     resultsJSON = trimResults(resultsJSON)
                     setState(resultsJSON)
