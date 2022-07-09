@@ -111,7 +111,8 @@ export default function MyMap({ setState }) {
         map.on('click', function(e) {
             var container = L.DomUtil.create('div'),
                 startBtn = createButton('Start from this location', container),
-                destBtn = createButton('Go to this location', container);
+                destBtn = createButton('Go to this location', container),
+                centralizeBtn = createButton('Centralize', container);
 
             L.popup()
                 .setContent(container)
@@ -136,6 +137,14 @@ export default function MyMap({ setState }) {
                 }
                 map.closePopup();
             });
+
+            L.DomEvent.on(centralizeBtn, 'click', function() {
+                map.flyTo(latlon, 13, {
+                    animate: true,
+                    durantion: 3
+                });
+                map.closePopup();
+            })
         });
     }, [])
     return <div id="map" className="map"></div>;

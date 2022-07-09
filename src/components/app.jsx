@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import AboutPage from '../pages/about';
 
 import {
   f7,
@@ -62,7 +63,7 @@ const MyApp = () => {
         <Panel right cover dark>
           <View>
             <Page>
-              <Navbar title="Informationen"/>
+              <AboutPage/>
             </Page>
           </View>
         </Panel>

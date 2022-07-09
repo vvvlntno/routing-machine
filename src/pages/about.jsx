@@ -3,17 +3,18 @@ import { Page, Navbar, Block, BlockTitle } from 'framework7-react';
 
 const AboutPage = () => (
   <Page>
-    <Navbar title="About" backLink="Back" />
-    <BlockTitle>About My App</BlockTitle>
+    <Navbar title="About this Application"/>
+    <BlockTitle>How to use</BlockTitle>
     <Block strong>
-      <p>Fugiat perspiciatis excepturi, soluta quod non ullam deleniti. Nobis sint nemo consequuntur, fugiat. Eius perferendis animi autem incidunt vel quod tenetur nostrum, voluptate omnis quasi quidem illum consequuntur, a, quisquam.</p>
-      <p>Laudantium neque magnam vitae nemo quam commodi, in cum dolore obcaecati laborum, excepturi harum, optio qui, consequuntur? Obcaecati dolor sequi nesciunt culpa quia perspiciatis, reiciendis ex debitis, ut tenetur alias.</p>
+      <p>Es gibt zwei Wege diesen "Location-based-service" zu benutzen.</p>
+      <p>Zum einen können sie je nach belieben auf die Karte klicken und dann auswählen was sie an diesem Punkt unternehmen wollen. Sie können die Navigation von dort beginnen oder dort enden lassen.</p>
+      <p>Zum anderen können Sie auch eine genaue Adresse in die Suchfelder eingeben. Außerdem können Sie einen zwischenstopp hinzufügen sobald sie auf das Plus in der Routenbeschreibung klicken.</p>
+      <p>Falls Sie die Karte auf ihre Position zurück bewegen möchten klicken Sie einfach auf die Karte und dann auf Centralize.</p>
     </Block>
+    {/* <BlockTitle>Information</BlockTitle>
     <Block strong>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni molestiae laudantium dignissimos est nobis delectus nemo ea alias voluptatum architecto, amet similique, saepe iste consectetur in repellat ut minus quibusdam!</p>
-      <p>Molestias et distinctio porro nesciunt ratione similique, magni doloribus, rerum nobis, aliquam quae reiciendis quasi modi. Nam a recusandae, fugiat in ea voluptates fuga eius, velit corrupti reprehenderit dignissimos consequatur!</p>
-      <p>Blanditiis, cumque quo adipisci. Molestiae, dolores dolorum quos doloremque ipsa ullam eligendi commodi deserunt doloribus inventore magni? Ea mollitia veniam nostrum nihil, iusto doloribus a at! Ea molestiae ullam delectus!</p>
-    </Block>
+      <p>TBD</p>
+    </Block> */}
   </Page>
 );
 
