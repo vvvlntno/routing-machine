@@ -16,7 +16,7 @@ const HomePage = () => (
         <NavTitle>location-based-service</NavTitle>
       </NavLeft>
       <NavRight>
-        <Link iconIos="f7:menu" iconAurora="f7:menu" iconMd="material:menu" panelOpen="right" />
+        <Link iconIos="f7:help" iconAurora="f7:help" iconMd="material:help" panelOpen="right" />
       </NavRight>
     </Navbar>
     <Information/>

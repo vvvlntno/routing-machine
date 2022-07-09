@@ -1,4 +1,79 @@
 /* Your app custom styles here */
+:root {
+    --f7-theme-color: black !important;
+}
+
+.navbar-bg {
+    background-color: var(--color-four) !important;
+}
+
+.leaflet-routing-container {
+    background-color: var(--color-four) !important;
+}
+
+div.leaflet-routing-geocoder>span.leaflet-routing-remove-waypoint {
+    color: var(--color-four) !important;
+    display: none;
+}
+
+div.leaflet-routing-geocoder>input {
+    background-color: var(--color-four) !important;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+button.leaflet-routing-add-waypoint {
+    background-color: var(--color-four) !important;
+    margin-top: 5px;
+    margin-right: 0px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+div.leaflet-routing-alt {
+    border-top: 1px solid black !important;
+}
+
+::placeholder {
+    color: black !important;
+}
+
+a.leaflet-control-zoom-in {
+    background-color: var(--color-four) !important;
+    border: 1px solid black;
+}
+
+a.leaflet-control-zoom-out {
+    background-color: var(--color-four) !important;
+    border: 1px solid black;
+}
+
+div.sliding {
+    background-color: #121212 !important;
+}
+
+button.color-green {
+    border: 1px solid black;
+}
+
+div.leaflet-popup-content-wrapper {
+    background-color: var(--color-four) !important;
+    border: 1px solid black;
+}
+
+div.leaflet-popup-tip {
+    background-color: var(--color-four) !important;
+    border: 1px solid black;
+}
+
+div.leaflet-popup-content {
+    background-color: var(--color-four) !important;
+}
+
+a.leaflet-popup-close-button {
+    color: black !important;
+}
+
 * {
     --color-one: #6a9665;
     --text-color: #202e21;
