@@ -116,10 +116,10 @@ export default function MyMap({ setState }) {
 
         map.on('click', function(e) {
             var container = L.DomUtil.create('div'),
-                startBtn = createButton('Start from this location', container),
-                destBtn = createButton('Go to this location', container),
-                centralizeBtn = createButton('Centralize', container),
-                randomplaceBtn = createButton('Random Place NEW', container);
+                startBtn = createButton('Beginn der Route', container),
+                destBtn = createButton('Ziel der Route', container),
+                centralizeBtn = createButton('Zentrieren', container),
+                randomplaceBtn = createButton('Zufälliger Ort', container);
 
             L.popup()
                 .setContent(container)
