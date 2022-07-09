@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import MyMap from './map';
 
 /**
@@ -10,12 +10,6 @@ export default function Information() {
     const [state, setState] = useState(["Information","Select a Destination for Information :)"])
     let title = state[0]
     let snippet = state[1].replace(/(<[^<>]*>)/gi,"")
-
-    // useEffect(() => {
-    //     console.log(snippet)
-    //     snippet = snippet.
-    //     console.log(snippet)
-    // }, [state])
 
     return <div id="information" className="information">
         <MyMap setState={ setState }/>

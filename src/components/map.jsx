@@ -71,8 +71,6 @@ function getRandomInRange(from, to, fixed) {
     return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
 }
 
-// [47.6500279, 9.4800858]
-
 /**
  *
  * @return {JSX.Element} - Map Component
@@ -85,7 +83,7 @@ export default function MyMap({ setState }) {
         setTimeout(() => {
             map.flyTo(latlon, 13, {
                 animate: true,
-                durantion: 3
+                duration: 4
             });
         }, 1000)
 
@@ -94,11 +92,6 @@ export default function MyMap({ setState }) {
         }).addTo(map);
 
         let control = L.Routing.control({
-            /**  Example: From Friedrichshafen to Ravensburg
-            waypoints: [ 
-                 L.latLng(47.6500279, 9.4800858),
-                 L.latLng(47.78198, 9.61062)
-            ], */
             routeWhileDragging: true,
             geocoder: L.Control.Geocoder.nominatim()
             //nominatin doesnt have autocomplete
@@ -134,8 +127,6 @@ export default function MyMap({ setState }) {
             L.DomEvent.on(destBtn, 'click', async function() {
                 control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
 
-                /**  let lnglat = [e.latlng.lng,e.latlng.lat] */
-
                 let cityname = await reverseGeocoding(e.latlng.lng,e.latlng.lat)
                 if (cityname != undefined) {
                     resultsJSON = await searchWikipedia(cityname)
@@ -148,7 +139,7 @@ export default function MyMap({ setState }) {
             L.DomEvent.on(centralizeBtn, 'click', function() {
                 map.flyTo(latlon, 13, {
                     animate: true,
-                    durantion: 3
+                    duration: 5
                 });
                 map.closePopup();
             });
@@ -156,7 +147,7 @@ export default function MyMap({ setState }) {
             L.DomEvent.on(randomplaceBtn, 'click', function() {
                 map.flyTo([getRandomInRange(-90, 90, 6),getRandomInRange(-180, 180, 6)], 13, {
                     animate: true,
-                    durantion: 1
+                    duration: 5
                 });
                 map.closePopup();
 
