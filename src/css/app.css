@@ -74,6 +74,9 @@ a.leaflet-popup-close-button {
     color: black !important;
 }
 
+span.leaflet-routing-collapse-btn {
+    color: black !important;
+}
 * {
     --color-one: #6a9665;
     --text-color: #202e21;

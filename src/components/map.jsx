@@ -65,6 +65,12 @@ function trimResults(results) {
     return [result.title,result.snippet]
 }
 
+
+// source: https://stackoverflow.com/questions/6878761/javascript-how-to-create-random-longitude-and-latitudes
+function getRandomInRange(from, to, fixed) {
+    return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
+}
+
 // [47.6500279, 9.4800858]
 
 /**
@@ -112,7 +118,8 @@ export default function MyMap({ setState }) {
             var container = L.DomUtil.create('div'),
                 startBtn = createButton('Start from this location', container),
                 destBtn = createButton('Go to this location', container),
-                centralizeBtn = createButton('Centralize', container);
+                centralizeBtn = createButton('Centralize', container),
+                randomplaceBtn = createButton('Random Place NEW', container);
 
             L.popup()
                 .setContent(container)
@@ -144,7 +151,16 @@ export default function MyMap({ setState }) {
                     durantion: 3
                 });
                 map.closePopup();
-            })
+            });
+
+            L.DomEvent.on(randomplaceBtn, 'click', function() {
+                map.flyTo([getRandomInRange(-90, 90, 6),getRandomInRange(-180, 180, 6)], 13, {
+                    animate: true,
+                    durantion: 1
+                });
+                map.closePopup();
+
+            });
         });
     }, [])
     return <div id="map" className="map"></div>;
