@@ -2,23 +2,26 @@
 
 ## Install Dependencies
 
-Als erstes installieren Sie bitte alle dependencies :). Schreiben Sie das ins Terminal:
+First install all dependencies using
 ```
 npm install
 ```
+OR
+```
+npm i
+```
 
-Wenn der Server dannach nicht mit npm start funktionieren sollte führen Sie folgende Zeilen aus:
+If you get errors install dependencies manually
 ```
 npm install --save leaflet
 npm install --save leaflet-routing-machine
 npm install --save leaflet-groupedlayercontrol
 npm install --save leaflet-control-geocoder
 npm install --save nominatim-geocoder
-npm install --save-dev sw-precache-webpack-plugin?
+npm install --save-dev sw-precache-webpack-plugin
 ```
 
 ## NPM Scripts
 
-* 🔥 `start` - starte server
-* 🔧 `dev` - starte development server
-* 🔧 `build` - baue die web app für die produktion
+* 🔥 `npm start` - start server
+
