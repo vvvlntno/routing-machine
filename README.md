@@ -25,3 +25,7 @@ npm install --save-dev sw-precache-webpack-plugin
 
 🔥 `npm start` - start server
 
+## How to use
+
+After starting you can use left click for a pop up or you can use input the direction on the right side.
+You get bonus information from wikipedia from your destination if you scroll down.
