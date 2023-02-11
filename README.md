@@ -23,5 +23,5 @@ npm install --save-dev sw-precache-webpack-plugin
 
 ## NPM Scripts
 
-* 🔥 `npm start` - start server
+🔥 `npm start` - start server
 
